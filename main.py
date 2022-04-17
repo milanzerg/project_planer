@@ -153,6 +153,9 @@ class StackLayoutExample(StackLayout):
             Label = Button(text=str(i), size_hint=(None, None), size=(dp(100), dp(100)))
             self.add_widget(Label)
 
+class Note():
+    def __init__(self, text, ):
+
 
 # class ContentNavigationDrawer(MDBoxLayout):
 #     def on_start(self):
