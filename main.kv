@@ -1,3 +1,39 @@
+WindowManager:
+    MainWindow:
+    SettingsWindow:
 
 
 <MainWindow>:
+    name: 'main'
+    GridLayout:
+        rows: 3
+        cols: 4
+        Button:
+            size_hint: None, None
+            pos_hint: { "center": 0.5}
+            height: "50dp"
+            width: "50dp"
+            on_release:
+                app.root.current = 'settings'
+                root.manager.transition.direction = "right"
+            Image:
+                source: 'settings.png'
+                size: "40dp", "40dp"
+                allow_stretch: True
+                y: self.parent.y + self.parent.width / 10
+                x: self.parent.x + self.parent.height / 10
+
+<SettingsWindow>:
+    name: 'settings'
+    GridLayout:
+        rows: 3
+        cols: 4
+        Button:
+            size_hint: None, None
+            pos_hint: { "center": 0.5}
+            height: "50dp"
+            width: "50dp"
+            text: "Hello"
+            on_release:
+                app.root.current = 'main'
+                root.manager.transition.direction = "left"
